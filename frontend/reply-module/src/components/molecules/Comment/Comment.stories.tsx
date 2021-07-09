@@ -23,5 +23,6 @@ Default.args = {
       type: "Authorized"
     },
     createdAt: "1시간 전"
-  }
+  },
+  shouldShowOption: true
 };

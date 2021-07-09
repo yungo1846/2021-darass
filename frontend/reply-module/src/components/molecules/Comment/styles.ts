@@ -6,6 +6,7 @@ const Container = styled.div<{ align: "left" | "right" }>`
 `;
 
 const CommentTextBoxWrapper = styled.div<{ align: "left" | "right" }>`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: ${props => (props.align === "left" ? "flex-start" : "flex-end")};
@@ -17,4 +18,10 @@ const Time = styled.span`
   margin-top: 0.3rem;
 `;
 
-export { Container, CommentTextBoxWrapper, Time };
+const CommentOptionWrapper = styled.div`
+  position: absolute;
+  right: 30px;
+  top: 8px;
+`;
+
+export { Container, CommentTextBoxWrapper, Time, CommentOptionWrapper };

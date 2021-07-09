@@ -20,6 +20,8 @@ const Text = styled.div`
   outline-color: ${PALETTE.BLACK_700};
   background-color: ${props => (props.contentEditable ? PALETTE.WHITE : PALETTE.GRAY_200)};
   border-radius: 10px;
+  min-width: 10rem;
+  max-width: 20rem;
 `;
 
 export { Container, Name, Text };
