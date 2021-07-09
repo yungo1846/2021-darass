@@ -45,6 +45,9 @@ const GlobalStyles = createGlobalStyle`
       img {
         object-fit: cover;
       }
+      button {
+        font-family: inherit;
+      }
 `;
 
 export default GlobalStyles;
