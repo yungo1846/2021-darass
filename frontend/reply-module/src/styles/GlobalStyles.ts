@@ -47,6 +47,9 @@ const GlobalStyles = createGlobalStyle`
       }
       button {
         font-family: inherit;
+        outline: none;
+        border: none;
+        cursor: pointer;
       }
 `;
 

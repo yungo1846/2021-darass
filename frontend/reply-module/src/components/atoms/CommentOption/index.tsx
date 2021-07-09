@@ -7,8 +7,8 @@ export interface Props {
   onDelete?: () => void;
 }
 
-const CommentOption = ({ onEdit, onDelete }) => {
-  const [isShowOptionBox, setShowOptionBox] = useState(true);
+const CommentOption = ({ onEdit, onDelete }: Props) => {
+  const [isShowOptionBox, setShowOptionBox] = useState(false);
   const onShowOptionBox = () => {
     setShowOptionBox(state => !state);
   };

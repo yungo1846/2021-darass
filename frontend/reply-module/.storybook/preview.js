@@ -1,5 +1,6 @@
 import { configure, addDecorator } from "@storybook/react";
 import GlobalStyles from "../src/styles/GlobalStyles";
+import "./preview.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

@@ -1,20 +1,11 @@
+import { Comment as CommentType } from "../../../types";
 import Avatar from "../../atoms/Avatar";
 import CommentOption from "../../atoms/CommentOption";
 import CommentTextBox from "../../atoms/CommentTextBox";
 import { Container, CommentTextBoxWrapper, Time, CommentOptionWrapper } from "./styles";
 
 export interface Props {
-  comment: {
-    id: number;
-    content: string;
-    user: {
-      id: number;
-      imageURL: string;
-      nickName: string;
-      type: string;
-    };
-    createdAt: string;
-  };
+  comment: CommentType;
   align?: "left" | "right";
 
   shouldShowOption?: boolean;
