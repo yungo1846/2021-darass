@@ -51,6 +51,9 @@ const GlobalStyles = createGlobalStyle`
         border: none;
         cursor: pointer;
       }
+      input, textarea {
+        font-family: inherit;
+      }
 `;
 
 export default GlobalStyles;
