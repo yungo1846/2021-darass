@@ -1,18 +1,17 @@
 import { Story } from "@storybook/react";
-import Comment, { Props } from ".";
+import CommentTextBox, { Props } from ".";
 
 export default {
-  title: "atoms/Comment",
-  component: Comment,
+  title: "atoms/CommentTextBox",
+  component: CommentTextBox,
   argTypes: { children: { control: "text" } }
 };
 
-const Template: Story<Props> = args => <Comment {...args} />;
+const Template: Story<Props> = args => <CommentTextBox {...args} />;
 
 export const Default = Template.bind({});
 
 Default.args = {
   name: "곤이",
-  text: "ㅎㅇㅎㅇ🎃",
   contentEditable: true
 };

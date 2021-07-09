@@ -2,17 +2,17 @@ import { Container, Name, Text } from "./styles";
 
 export interface Props {
   name: string;
-  text: string;
+  children: string;
   contentEditable?: boolean;
 }
 
-const Comment = ({ name, text, contentEditable = false }: Props) => {
+const CommentTextBox = ({ name, children, contentEditable = false }: Props) => {
   return (
     <Container>
       <Name>{name}</Name>
-      <Text contentEditable={contentEditable}>{text}</Text>
+      <Text contentEditable={contentEditable}>{children}</Text>
     </Container>
   );
 };
 
-export default Comment;
+export default CommentTextBox;
