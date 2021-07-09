@@ -3,5 +3,6 @@ export enum PALETTE {
   "SECONDARY" = "#0BC586",
   "TERTIARY" = "#FFE200",
   "WHITE" = "#FFFFFF",
-  "BLACK_700" = "#303030"
+  "BLACK_700" = "#303030",
+  "GRAY_200" = "#F0F2F5"
 }
