@@ -33,9 +33,4 @@ const OptionContainer = styled.div`
   }
 `;
 
-const ChildrenText = styled.span`
-  font-size: 1.2rem;
-  font-weight: bold;
-`;
-
-export { Container, Label, OptionContainer, ChildrenText };
+export { Container, Label, OptionContainer };

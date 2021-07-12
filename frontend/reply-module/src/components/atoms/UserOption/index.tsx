@@ -1,9 +1,9 @@
-import { ReactChild } from "react";
+import { ReactNode } from "react";
 import { Container, Label, OptionContainer } from "./styles";
 
 export interface Props {
   userName: string;
-  children: ReactChild[];
+  children: ReactNode;
 }
 
 const UserOption = ({ userName, children }: Props) => {
