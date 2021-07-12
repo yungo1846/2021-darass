@@ -14,6 +14,7 @@ const InputCSS = css`
 `;
 
 const SpeechBubbleCSS = css`
+  position: absolute;
   width: 6rem;
   box-shadow: 1.04082px 1.04082px 6.24491px rgba(0, 0, 0, 0.25);
   border-radius: 10px;

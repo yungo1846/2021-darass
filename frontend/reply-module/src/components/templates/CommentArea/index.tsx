@@ -1,6 +1,5 @@
 import { Comment } from "../../../types";
 import { User } from "../../../types/user";
-import UserOption from "../../atoms/UserOption";
 import UserAvatarOption from "../../molecules/UserAvatarOption";
 import CommentInput from "../../organisms/CommentInput";
 import CommentList from "../../organisms/CommentList";
@@ -19,8 +18,9 @@ const CommentArea = ({ user }: Props) => {
           댓글 <CommentCount>{comments.length}</CommentCount>
         </CommentCountWrapper>
 
-        <UserAvatarOption user={user}>{user ? "로그아웃" : "카카오로 로그인"}</UserAvatarOption>
-        <UserOption userName={user.nickName}>{user ? "로그아웃" : "카카오로 로그인"}</UserOption>
+        <UserAvatarOption user={user}>
+          <span>{user ? "로그아웃" : "카카오로 로그인"}</span>
+        </UserAvatarOption>
       </Header>
       <CommentInput />
       <CommentListWrapper>
