@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { PALETTE } from "./palette";
 
 const GlobalStyles = createGlobalStyle`
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap');
@@ -15,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         min-height: 100vh;
         width: 100%;
+        color: ${PALETTE.BLACK_700};
       }
       ul {
         list-style: none;
@@ -33,7 +35,6 @@ const GlobalStyles = createGlobalStyle`
       a {
         text-decoration: none;
         outline: none;
-        color: black;
         &:link,
         &:visited,
         &:hover,
