@@ -1,5 +1,7 @@
+import CommentPage from "./components/page/CommentPage";
+
 const App = () => {
-  return null;
+  return <CommentPage />;
 };
 
 export default App;

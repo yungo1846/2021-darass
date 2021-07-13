@@ -5,7 +5,7 @@ import UserOption from "../../atoms/UserOption";
 import { Container, UserOptionWrapper } from "./styles";
 
 export interface Props {
-  user: User;
+  user?: User;
   children: ReactNode;
 }
 
@@ -17,10 +17,16 @@ const UserAvatarOption = ({ user, children }: Props) => {
 
   return (
     <Container>
-      <Avatar imageURL={user.imageURL} onClick={onShowOptionBox} />
+      <Avatar
+        imageURL={
+          user?.imageURL ||
+          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/06/15/Chris-Pratt.jpg?width=982&height=726&auto=webp&quality=75"
+        }
+        onClick={onShowOptionBox}
+      />
       {isShowOptionBox && (
         <UserOptionWrapper>
-          <UserOption userName={user.nickName}>{children}</UserOption>
+          <UserOption userName={user?.nickName || "Login With"}>{children}</UserOption>
         </UserOptionWrapper>
       )}
     </Container>

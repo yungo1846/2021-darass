@@ -7,7 +7,7 @@ const Container = styled.div`
 
 const UserOptionWrapper = styled.div`
   position: absolute;
-  right: 105px;
+  right: 166px;
   top: 50px;
 `;
 

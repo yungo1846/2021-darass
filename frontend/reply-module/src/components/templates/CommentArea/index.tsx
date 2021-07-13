@@ -6,11 +6,12 @@ import CommentList from "../../organisms/CommentList";
 import { Container, Header, CommentCount, CommentCountWrapper, CommentListWrapper } from "./styles";
 
 export interface Props {
-  user: User;
+  user?: User;
 }
 
 const CommentArea = ({ user }: Props) => {
   const comments: Comment[] = [];
+
   return (
     <Container>
       <Header>
