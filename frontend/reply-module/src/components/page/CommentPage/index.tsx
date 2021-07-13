@@ -1,10 +1,10 @@
-import { useKakaoAuth } from "../../../hooks";
+import { useLogin } from "../../../hooks";
 import CommentArea from "../../templates/CommentArea";
 
 const CommentPage = () => {
-  const { onLogin: onLoginWithKakao } = useKakaoAuth();
+  const { login } = useLogin();
 
-  return <CommentArea onLoginWithKakao={onLoginWithKakao} />;
+  return <CommentArea onLoginWithKakao={login} />;
 };
 
 export default CommentPage;

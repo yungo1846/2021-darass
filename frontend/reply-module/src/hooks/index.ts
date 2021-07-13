@@ -1,3 +1,3 @@
-import useKakaoAuth from "./useKakaoAuth";
+import useLogin from "./useLogin";
 
-export { useKakaoAuth };
+export { useLogin };
