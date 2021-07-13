@@ -6,11 +6,12 @@ import CommentList from "../../organisms/CommentList";
 import { Container, Header, CommentCount, CommentCountWrapper, CommentListWrapper } from "./styles";
 
 export interface Props {
-  user?: User;
-  onLoginWithKakao: () => void;
+  user: User | null;
+  onLogin: () => void;
+  onLogout: () => void;
 }
 
-const CommentArea = ({ user, onLoginWithKakao }: Props) => {
+const CommentArea = ({ user, onLogin, onLogout }: Props) => {
   const comments: Comment[] = [];
 
   return (
@@ -21,9 +22,15 @@ const CommentArea = ({ user, onLoginWithKakao }: Props) => {
         </CommentCountWrapper>
 
         <UserAvatarOption user={user}>
-          <button type="button" onClick={onLoginWithKakao}>
-            {user ? "로그아웃" : "카카오로 로그인"}
-          </button>
+          {user ? (
+            <button type="button" onClick={onLogout}>
+              로그아웃
+            </button>
+          ) : (
+            <button type="button" onClick={onLogin}>
+              카카오로 로그인
+            </button>
+          )}
         </UserAvatarOption>
       </Header>
       <CommentInput />

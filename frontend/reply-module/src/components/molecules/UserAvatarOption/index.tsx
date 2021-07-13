@@ -5,7 +5,7 @@ import UserOption from "../../atoms/UserOption";
 import { Container, UserOptionWrapper } from "./styles";
 
 export interface Props {
-  user?: User;
+  user: User | null;
   children: ReactNode;
 }
 
