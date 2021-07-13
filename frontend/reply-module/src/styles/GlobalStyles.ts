@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { pageMaxWidth } from "./constants";
 import { PALETTE } from "./palette";
 
 const GlobalStyles = createGlobalStyle`
@@ -8,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
       }
       html { 
-          font-size: 10px;
+          font-size: 16px;
           font-family: 'Noto Sans KR', sans-serif;
       }
       html, body {
@@ -17,6 +18,13 @@ const GlobalStyles = createGlobalStyle`
         min-height: 100vh;
         width: 100%;
         color: ${PALETTE.BLACK_700};
+        max-width: ${pageMaxWidth};
+        margin: 0 auto;
+      }
+      @media all and (max-width:780px) {
+        html {
+          font-size: 10px;
+        }
       }
       ul {
         list-style: none;
