@@ -18,10 +18,7 @@ const UserAvatarOption = ({ user, children }: Props) => {
   return (
     <Container>
       <Avatar
-        imageURL={
-          user?.imageURL ||
-          "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/06/15/Chris-Pratt.jpg?width=982&height=726&auto=webp&quality=75"
-        }
+        imageURL={user?.imageURL || "https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png"}
         onClick={onShowOptionBox}
       />
       {isShowOptionBox && (

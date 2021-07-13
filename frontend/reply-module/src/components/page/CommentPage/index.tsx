@@ -10,7 +10,8 @@ const mockFetchUser = () => {
   const dummyUser: User = {
     id: 1,
     nickName: "도비",
-    imageURL: "https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png",
+    imageURL:
+      "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/06/15/Chris-Pratt.jpg?width=982&height=726&auto=webp&quality=75",
     type: "Signed"
   };
 

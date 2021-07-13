@@ -1,6 +1,7 @@
-const BASE_URL = "http://ec2-3-37-123-29.ap-northeast-2.compute.amazonaws.com:8080";
+const BASE_URL = "http://13.209.89.65";
 const QUERY = {
-  LOGIN: "/api/v1/login/oauth?oauthAccessToken="
+  LOGIN: "/api/v1/login/oauth?oauthAccessToken=",
+  COMMENT: "/api/v1/comments"
 };
 
 export { BASE_URL, QUERY };
