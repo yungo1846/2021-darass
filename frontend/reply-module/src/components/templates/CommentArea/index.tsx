@@ -7,9 +7,10 @@ import { Container, Header, CommentCount, CommentCountWrapper, CommentListWrappe
 
 export interface Props {
   user?: User;
+  onLoginWithKakao: () => void;
 }
 
-const CommentArea = ({ user }: Props) => {
+const CommentArea = ({ user, onLoginWithKakao }: Props) => {
   const comments: Comment[] = [];
 
   return (
@@ -20,7 +21,9 @@ const CommentArea = ({ user }: Props) => {
         </CommentCountWrapper>
 
         <UserAvatarOption user={user}>
-          <span>{user ? "로그아웃" : "카카오로 로그인"}</span>
+          <button type="button" onClick={onLoginWithKakao}>
+            {user ? "로그아웃" : "카카오로 로그인"}
+          </button>
         </UserAvatarOption>
       </Header>
       <CommentInput />
