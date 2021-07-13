@@ -3,6 +3,10 @@ import styled from "styled-components";
 const Container = styled.div`
   position: relative;
   width: fit-content;
+
+  & > img {
+    cursor: pointer;
+  }
 `;
 
 const UserOptionWrapper = styled.div`

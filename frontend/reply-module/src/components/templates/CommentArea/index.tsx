@@ -33,7 +33,7 @@ const CommentArea = ({ user, onLogin, onLogout }: Props) => {
           )}
         </UserAvatarOption>
       </Header>
-      <CommentInput />
+      <CommentInput user={user} />
       <CommentListWrapper>
         <CommentList comments={comments} />
       </CommentListWrapper>

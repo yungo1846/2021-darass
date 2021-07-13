@@ -1,4 +1,4 @@
-import CommentPage from "./components/page/CommentPage";
+import CommentPage from "./components/pages/CommentPage";
 
 const App = () => {
   return <CommentPage />;

@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { User } from "../../../types/user";
 import Avatar from "../../atoms/Avatar";
 import UserOption from "../../atoms/UserOption";
@@ -10,10 +10,15 @@ export interface Props {
 }
 
 const UserAvatarOption = ({ user, children }: Props) => {
-  const [isShowOptionBox, setShowOptionBox] = useState(false);
+  const [isShowOptionBox, setShowOptionBox] = useState(true);
+
   const onShowOptionBox = () => {
     setShowOptionBox(state => !state);
   };
+
+  useEffect(() => {
+    setShowOptionBox(state => !state);
+  }, [user]);
 
   return (
     <Container>

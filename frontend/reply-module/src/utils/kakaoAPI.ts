@@ -1,7 +1,9 @@
 const getKakaoAccessToken = async () => {
   const { Kakao } = window;
 
-  Kakao.init(process.env.KAKAO_JAVASCRIPT_API_KEY);
+  if (!Kakao.isInitialized()) {
+    Kakao.init(process.env.KAKAO_JAVASCRIPT_API_KEY);
+  }
 
   return new Promise((resolve, reject) =>
     Kakao.Auth.login({
