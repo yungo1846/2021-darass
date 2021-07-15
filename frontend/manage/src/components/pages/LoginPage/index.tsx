@@ -1,10 +1,10 @@
-import useLogin from "../../../hooks/useLogin";
+import { useUser } from "../../../hooks";
 import { PALETTE } from "../../../styles/palette";
 import ScreenContainer from "../../../styles/ScreenContainer";
 import Login from "../../templates/Login";
 
 const LoginPage = () => {
-  const { login } = useLogin();
+  const { login } = useUser();
 
   return (
     <ScreenContainer bgColor={PALETTE.PRIMARY}>
