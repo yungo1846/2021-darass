@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
-import Login from "./components/pages/Login";
-import Home from "./components/pages/Home";
+import Login from "./components/pages/LoginPage";
+import Home from "./components/pages/HomePage";
 import { ROUTE } from "./constants";
 import Nav from "./components/organisms/Nav";
 import { ConditionalRoute } from "./components/HOC/ConditionalRoute";
+import MyProjectPage from "./components/pages/MyProjectPage";
 
 const App = () => {
   const user = {
@@ -19,6 +20,7 @@ const App = () => {
         <Switch>
           <Route exact path={ROUTE.HOME} component={Home} />
           <ConditionalRoute path={ROUTE.LOGIN} component={Login} condition={!user} />
+          <ConditionalRoute path={ROUTE.MY_PROJECT} component={MyProjectPage} condition={!!user} />
           <Redirect to={ROUTE.HOME} />
         </Switch>
       </Router>
