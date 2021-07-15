@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { PALETTE } from "../../../styles/palette";
 import ScreenContainer from "../../../styles/ScreenContainer";
-import LoginTemplate from "../../templates/Login";
+import Login from "../../templates/Login";
 
 const { Kakao } = window;
 
@@ -18,7 +18,7 @@ const loginWithKakao = () => {
   });
 };
 
-const Login = () => {
+const LoginPage = () => {
   const onLoginWithKakao = () => {
     loginWithKakao();
   };
@@ -29,9 +29,9 @@ const Login = () => {
 
   return (
     <ScreenContainer bgColor={PALETTE.PRIMARY}>
-      <LoginTemplate onLoginWithKakao={onLoginWithKakao} />
+      <Login onLoginWithKakao={onLoginWithKakao} />
     </ScreenContainer>
   );
 };
 
-export default Login;
+export default LoginPage;

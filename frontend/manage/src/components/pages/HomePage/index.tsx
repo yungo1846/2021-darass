@@ -1,13 +1,13 @@
 import { PALETTE } from "../../../styles/palette";
 import ScreenContainer from "../../../styles/ScreenContainer";
-import HomeTemplate from "../../templates/Home";
+import Home from "../../templates/Home";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <ScreenContainer bgColor={PALETTE.PRIMARY}>
-      <HomeTemplate />
+      <Home />
     </ScreenContainer>
   );
 };
 
-export default Home;
+export default HomePage;
