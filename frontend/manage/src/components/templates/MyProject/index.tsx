@@ -4,16 +4,16 @@ import { AddProjectButton, ButtonWrapper, Container, Title } from "./styles";
 
 export interface Props {
   projects: Project[];
-  addProject: () => void;
+  moveNewProjectPage: () => void;
   moveProjectDetailPage: (id: number) => void;
 }
 
-const MyProject = ({ projects, addProject, moveProjectDetailPage }: Props) => {
+const MyProject = ({ projects, moveNewProjectPage, moveProjectDetailPage }: Props) => {
   return (
     <Container>
       <Title>내 프로젝트</Title>
       <ButtonWrapper>
-        <AddProjectButton onClick={addProject}>새로운 프로젝트 만들기</AddProjectButton>
+        <AddProjectButton onClick={moveNewProjectPage}>새로운 프로젝트 만들기</AddProjectButton>
         {projects.map(({ id, name }) => (
           <ProjectButton key={id} onClick={() => moveProjectDetailPage(id)}>
             {name}

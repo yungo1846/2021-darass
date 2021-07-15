@@ -1,13 +1,13 @@
 import { Story } from "@storybook/react";
-import MyProject, { Props } from ".";
+import NewProject, { Props } from ".";
 
 export default {
-  title: "templates/MyProject",
-  component: MyProject,
+  title: "templates/NewProject",
+  component: NewProject,
   argTypes: {}
 };
 
-const Template: Story<Props> = args => <MyProject {...args} />;
+const Template: Story<Props> = args => <NewProject {...args} />;
 
 export const Default = Template.bind({});
 
@@ -16,7 +16,7 @@ Default.args = {
     { id: 1, name: "Github" },
     { id: 2, name: "Tistory" }
   ],
-  moveNewProjectPage: () => {},
+  addProject: () => {},
   moveProjectDetailPage: id => {
     alert(`id: ${id}`);
   }
