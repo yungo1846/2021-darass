@@ -6,6 +6,7 @@ import Home from "./components/pages/HomePage";
 import Login from "./components/pages/LoginPage";
 import MyProjectPage from "./components/pages/MyProjectPage";
 import NewProjectPage from "./components/pages/NewProjectPage";
+import ScriptPublishingPage from "./components/pages/ScriptPublishingPage";
 import { ROUTE } from "./constants";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => {
           <ConditionalRoute path={ROUTE.LOGIN} component={Login} condition={!user} />
           <ConditionalRoute path={ROUTE.MY_PROJECT} component={MyProjectPage} condition={!!user} />
           <ConditionalRoute path={ROUTE.NEW_PROJECT} component={NewProjectPage} condition={!!user} />
+          <ConditionalRoute path={ROUTE.SCRIPT_PUBLISHING} component={ScriptPublishingPage} condition={!!user} />
           <Redirect to={ROUTE.HOME} />
         </Switch>
       </Router>
