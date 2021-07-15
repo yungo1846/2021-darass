@@ -264,6 +264,9 @@ public class CommentAcceptanceTest extends AcceptanceTest {
         )
             .andExpect(status().isNoContent())
             .andDo(document("api/v1/comments/delete/success-login-user",
+                requestHeaders(
+                    headerWithName("Authorization").description("JWT - Bearer 토큰")
+                ),
                 pathParameters(
                     parameterWithName("id").description("삭제할 댓글 id")
                 )
@@ -361,6 +364,7 @@ public class CommentAcceptanceTest extends AcceptanceTest {
             .oauthId("abc13gag")
             .oauthPlatform(OAuthPlatform.KAKAO)
             .email("qkrwotjd1445@naver.com")
+            .imageUrl("image")
             .build();
         users.save(socialLoginUser);
         token = jwtTokenProvider.createAccessToken(socialLoginUser.getId().toString());
