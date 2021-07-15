@@ -1,10 +1,14 @@
+import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
-import Login from "./components/pages/LoginPage";
-import Home from "./components/pages/HomePage";
-import { ROUTE } from "./constants";
-import Nav from "./components/organisms/Nav";
 import { ConditionalRoute } from "./components/HOC/ConditionalRoute";
+import Nav from "./components/organisms/Nav";
+import Home from "./components/pages/HomePage";
+import Login from "./components/pages/LoginPage";
 import MyProjectPage from "./components/pages/MyProjectPage";
+import NewProjectPage from "./components/pages/NewProjectPage";
+import { ROUTE } from "./constants";
+
+const queryClient = new QueryClient();
 
 const App = () => {
   const user = {
@@ -14,17 +18,18 @@ const App = () => {
   };
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Router>
         <Nav user={user} />
         <Switch>
           <Route exact path={ROUTE.HOME} component={Home} />
           <ConditionalRoute path={ROUTE.LOGIN} component={Login} condition={!user} />
           <ConditionalRoute path={ROUTE.MY_PROJECT} component={MyProjectPage} condition={!!user} />
+          <ConditionalRoute path={ROUTE.NEW_PROJECT} component={NewProjectPage} condition={!!user} />
           <Redirect to={ROUTE.HOME} />
         </Switch>
       </Router>
-    </>
+    </QueryClientProvider>
   );
 };
 export default App;
