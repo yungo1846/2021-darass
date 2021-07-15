@@ -10,9 +10,7 @@ import { ROUTE } from "./constants";
 import { useUser } from "./hooks";
 
 const App = () => {
-  const { user } = useUser();
-
-  console.log(user);
+  const { user, isLoading } = useUser();
 
   return (
     <Router>
@@ -20,9 +18,13 @@ const App = () => {
       <Switch>
         <Route exact path={ROUTE.HOME} component={Home} />
         <ConditionalRoute path={ROUTE.LOGIN} component={Login} condition={!user} redirectPath={ROUTE.MY_PROJECT} />
-        <ConditionalRoute path={ROUTE.MY_PROJECT} component={MyProjectPage} condition={!!user} />
-        <ConditionalRoute path={ROUTE.NEW_PROJECT} component={NewProjectPage} condition={!!user} />
-        <ConditionalRoute path={ROUTE.SCRIPT_PUBLISHING} component={ScriptPublishingPage} condition={!!user} />
+        <ConditionalRoute path={ROUTE.MY_PROJECT} component={MyProjectPage} condition={!!user || isLoading} />
+        <ConditionalRoute path={ROUTE.NEW_PROJECT} component={NewProjectPage} condition={!!user || isLoading} />
+        <ConditionalRoute
+          path={ROUTE.SCRIPT_PUBLISHING}
+          component={ScriptPublishingPage}
+          condition={!!user || isLoading}
+        />
         <Redirect to={ROUTE.HOME} />
       </Switch>
     </Router>
