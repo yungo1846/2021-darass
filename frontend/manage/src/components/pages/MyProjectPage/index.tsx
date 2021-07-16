@@ -13,7 +13,7 @@ const MyProjectPage = () => {
     <ScreenContainer bgColor={PALETTE.WHITE}>
       <MyProject
         projects={projects}
-        moveProjectDetailPage={id => history.push(`${ROUTE.PROJECT_DETAIL}/${id}`)}
+        moveProjectDetailPage={id => history.push(ROUTE.GET_PROJECT_DETAIL(id))}
         moveNewProjectPage={() => history.push(ROUTE.NEW_PROJECT)}
       />
     </ScreenContainer>

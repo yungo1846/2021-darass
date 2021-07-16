@@ -15,16 +15,13 @@ const useProject = () => {
 
   const { data: projects, isLoading, error } = useQuery<Project[], Error>(REACT_QUERY_KEY.PROJECT, () => getProject());
 
-  const addMutation = useMutation<Project, Error, Project["name"]>(
-    projectName => request.post(QUERY.PROJECT, projectName),
-    {
-      onSuccess: data => {
-        queryClient.setQueryData<Project[] | undefined>(REACT_QUERY_KEY.PROJECT, projects => {
-          return projects?.concat(data);
-        });
-      }
+  const addMutation = useMutation<Project, Error, Project["name"]>(name => request.post(QUERY.PROJECT, { name }), {
+    onSuccess: data => {
+      queryClient.setQueryData<Project[] | undefined>(REACT_QUERY_KEY.PROJECT, projects => {
+        return projects?.concat(data);
+      });
     }
-  );
+  });
 
   const addProject = async (projectName: Project["name"]) => {
     const project = await addMutation.mutateAsync(projectName);

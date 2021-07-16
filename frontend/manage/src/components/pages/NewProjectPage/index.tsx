@@ -16,6 +16,7 @@ const NewProjectPage = () => {
     event.preventDefault();
 
     const project = await addProject(projectName);
+
     history.push(ROUTE.GET_SCRIPT_PUBLISHING(project.id));
   };
 
