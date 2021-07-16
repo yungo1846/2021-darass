@@ -3,8 +3,6 @@ import { useHistory } from "react-router-dom";
 import { ROUTE } from "../../../constants";
 import { useInput } from "../../../hooks";
 import useProject from "../../../hooks/useProject";
-import { PALETTE } from "../../../styles/palette";
-import ScreenContainer from "../../../styles/ScreenContainer";
 import NewProject from "../../templates/NewProject";
 
 const NewProjectPage = () => {
@@ -20,11 +18,7 @@ const NewProjectPage = () => {
     history.push(ROUTE.GET_SCRIPT_PUBLISHING(project.id));
   };
 
-  return (
-    <ScreenContainer bgColor={PALETTE.WHITE}>
-      <NewProject onSubmit={onSubmit} projectName={projectName} onChangeProjectName={onChangeProjectName} />
-    </ScreenContainer>
-  );
+  return <NewProject onSubmit={onSubmit} projectName={projectName} onChangeProjectName={onChangeProjectName} />;
 };
 
 export default NewProjectPage;
