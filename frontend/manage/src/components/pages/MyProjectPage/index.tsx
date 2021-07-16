@@ -1,10 +1,10 @@
 import { useHistory } from "react-router-dom";
 import { ROUTE } from "../../../constants";
-import useProject from "../../../hooks/useProject";
+import { useGetAllProjects } from "../../../hooks";
 import MyProject from "../../templates/MyProject";
 
 const MyProjectPage = () => {
-  const { projects } = useProject();
+  const { projects } = useGetAllProjects();
   const history = useHistory();
 
   return (
