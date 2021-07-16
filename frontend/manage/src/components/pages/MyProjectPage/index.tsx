@@ -10,7 +10,7 @@ const MyProjectPage = () => {
   return (
     <MyProject
       projects={projects}
-      moveProjectDetailPage={id => history.push(ROUTE.GET_PROJECT_DETAIL(id))}
+      moveProjectDetailPage={id => history.push(ROUTE.GET_SCRIPT_PUBLISHING(id))}
       moveNewProjectPage={() => history.push(ROUTE.NEW_PROJECT)}
     />
   );

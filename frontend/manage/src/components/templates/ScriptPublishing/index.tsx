@@ -22,7 +22,7 @@ const scriptCode = (projectSecretKey: string) => `
 `;
 
 export interface Props {
-  projectSecretKey: string;
+  projectSecretKey?: string;
 }
 
 const ScriptPublishing = ({ projectSecretKey }: Props) => {
@@ -31,7 +31,7 @@ const ScriptPublishing = ({ projectSecretKey }: Props) => {
       <Container>
         <Section>
           <Title>다라쓰 설치 코드</Title>
-          <CodeBlockWrapper>{scriptCode(projectSecretKey)}</CodeBlockWrapper>
+          <CodeBlockWrapper>{scriptCode(projectSecretKey || "코드를 불러오는 중입니다...")}</CodeBlockWrapper>
         </Section>
 
         <Section>
