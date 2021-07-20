@@ -30,6 +30,8 @@ jobs:
       
     - name: Cache Yarn Install
       uses: c-hive/gha-yarn-cache@v2
+      with:
+        working-directory: ./frontend/reply-module
       
     - name: Install Dependencies - comment
       run: yarn install
@@ -44,6 +46,8 @@ jobs:
         
     - name: Cache Yarn Install
       uses: c-hive/gha-yarn-cache@v2
+      with:
+        working-directory: ./frontend/manage
       
     - name: Install Dependencies - project
       run: yarn install
@@ -58,6 +62,8 @@ jobs:
         
     - name: Cache Yarn Install
       uses: c-hive/gha-yarn-cache@v2
+      with:
+        working-directory: ./frontend/deploy-script
     
     - name: Install Dependencies - deploy script
       run: yarn install
@@ -66,13 +72,3 @@ jobs:
     - name: Build - deploy script
       run: yarn build
       working-directory: ./frontend/deploy-script
-  
-    - name: build result to slack
-      uses: 8398a7/action-slack@v3
-      with:
-        status: ${{ job.status }}
-        fields: repo, message, commit, author, action, eventName, ref, workflow, job, took
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_FRONT }}
-      if: always()
