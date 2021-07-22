@@ -28,12 +28,8 @@ jobs:
     - name: Setup yarn
       run: npm install -g yarn
       
-    - name: Cache Yarn Install
-      uses: bahmutov/npm-install@v1
-      with:
-        working-directory: ./frontend/reply-module
-      
     - name: Install Dependencies - comment
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install
       working-directory: ./frontend/reply-module
     
@@ -43,13 +39,9 @@ jobs:
       env:
         KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         KAKAO_JAVASCRIPT_API_KEY: ${{ secrets.KAKAO_JAVASCRIPT_API_KEY}}
-        
-    - name: Cache Yarn Install
-      uses: bahmutov/npm-install@v1
-      with:
-        working-directory: ./frontend/manage
       
     - name: Install Dependencies - project
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install
       working-directory: ./frontend/manage
     
@@ -59,13 +51,9 @@ jobs:
       env:
         KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
         KAKAO_JAVASCRIPT_API_KEY: ${{ secrets.KAKAO_JAVASCRIPT_API_KEY}}
-        
-    - name: Cache Yarn Install
-      uses: bahmutov/npm-install@v1
-      with:
-        working-directory: ./frontend/deploy-script
     
     - name: Install Dependencies - deploy script
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install
       working-directory: ./frontend/deploy-script
     
