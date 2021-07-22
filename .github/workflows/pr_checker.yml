@@ -30,7 +30,7 @@ jobs:
       
     - name: Install Dependencies - comment
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install
+      run: yarn install --prefer-offline
       working-directory: ./frontend/reply-module
     
     - name: Build - comment
@@ -42,7 +42,7 @@ jobs:
       
     - name: Install Dependencies - project
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install
+      run: yarn install --prefer-offline
       working-directory: ./frontend/manage
     
     - name: Build - project
@@ -54,7 +54,7 @@ jobs:
     
     - name: Install Dependencies - deploy script
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install
+      run: yarn install --prefer-offline
       working-directory: ./frontend/deploy-script
     
     - name: Build - deploy script
