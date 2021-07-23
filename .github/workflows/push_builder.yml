@@ -10,7 +10,7 @@ on:
 jobs:
   deploy:
 
-    runs-on: [ self-hosted, backend ]
+    runs-on: [ self-hosted, backend, docker ]
 
     steps:
     - name: Checkout code 
