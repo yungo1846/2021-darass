@@ -30,6 +30,9 @@ jobs:
       with:
         timezone: Asia/Seoul
         
+    - name: Print pwd
+      run: echo `pwd`
+        
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       working-directory: ./backend
