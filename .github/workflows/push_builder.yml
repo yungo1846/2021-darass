@@ -45,15 +45,14 @@ jobs:
         GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
         GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
       with:
-        host: ${{ secrets.EC2_HOST }}, ${{ secrets.EC2_HOST_2 }}
+        host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         envs: GIT_USERNAME, GIT_PASSWORD
-        source: '/home/runner/_work/2021-darass/2021-darass'
+        source: '/home/runner'
         target: '/home/ubuntu'
         strip_components: 1
-      
-
+        
           
     - name: build result to slack
       uses: 8398a7/action-slack@v3
