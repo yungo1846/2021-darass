@@ -55,7 +55,7 @@ jobs:
       with:
         host: ${{ secrets.EC2_HOST_TEST }}}
         username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.EC2_PRIVATE_KEY_TEST }}
+        key: ${{ secrets.EC2_PRIVATE_KEY }}
         envs: GIT_USERNAME, GIT_PASSWORD
         script: ls -a
           
