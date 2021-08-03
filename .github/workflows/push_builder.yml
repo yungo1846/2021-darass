@@ -35,7 +35,7 @@ jobs:
       working-directory: ./backend
       
     - name: Build with Gradle
-      run: ./gradlew clean build
+      run: ./gradlew clean build -x test
       working-directory: ./backend
      
     - name: Push Docker Registry
