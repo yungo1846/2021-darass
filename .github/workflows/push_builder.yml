@@ -53,15 +53,11 @@ jobs:
         GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
         GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
       with:
-        host: ${{ secrets.EC2_HOST }}}
+        host: ${{ secrets.EC2_HOST_TEST }}}
         username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.EC2_PRIVATE_KEY }}
+        key: ${{ secrets.EC2_PRIVATE_KEY_TEST }}
         envs: GIT_USERNAME, GIT_PASSWORD
-        script: |
-          docker pull www.darass-docker-image.p-e.kr/darass/springboot-prod-server:latest
-          docker stop springboot-prod-server
-          docker rm springboot-prod-server
-          docker run -d -p --name springboot-prod-server 8080:8080 www.darass-docker-image.p-e.kr/darass/springboot-prod-server
+        script: ls -a
           
     - name: build result to slack
       uses: 8398a7/action-slack@v3
