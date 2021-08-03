@@ -53,9 +53,9 @@ jobs:
         GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
         GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
       with:
-        host: ${{ secrets.EC2_HOST_TEST }}}
+        host: ${{ secrets.EC2_HOST }}}
         username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.EC2_PRIVATE_KEY_TEST }}
+        key: ${{ secrets.EC2_PRIVATE_KEY }}
         envs: GIT_USERNAME, GIT_PASSWORD
         script: |
           docker pull www.darass-docker-image.p-e.kr/darass/springboot-prod-server:latest
