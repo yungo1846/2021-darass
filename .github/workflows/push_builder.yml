@@ -39,7 +39,7 @@ jobs:
         mysql database: 'darass-local'
         mysql root password: ${{ secrets.Root_Password }} 
         mysql user: 'darass'
-        mysql password: ${{ secrets.Database_Password }
+        mysql password: ${{ secrets.Database_Password }}
         
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
