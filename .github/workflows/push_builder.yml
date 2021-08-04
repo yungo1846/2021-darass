@@ -29,9 +29,6 @@ jobs:
       uses: zcong1993/setup-timezone@master
       with:
         timezone: Asia/Seoul
-        
-    - name: Shutdown Ubuntu MySQL (SUDO)
-      run: sudo service mysql stop
     
     - name: Set up MariaDB
       uses: getong/mariadb-action@v1.1
