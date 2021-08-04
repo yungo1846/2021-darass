@@ -30,17 +30,6 @@ jobs:
       with:
         timezone: Asia/Seoul
         
-    - name: Shutdown Ubuntu MySQL (SUDO)
-      run: sudo service mysql stop
-    
-    - name: Set up MariaDB
-      uses: getong/mariadb-action@v1.1
-      with:
-        mysql database: 'darass-local'
-        mysql root password: ${{ secrets.Root_Password }} 
-        mysql user: 'darass'
-        mysql password: ${{ secrets.Database_Password }}
-        
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       working-directory: ./backend
